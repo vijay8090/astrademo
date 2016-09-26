@@ -1,0 +1,67 @@
+
+<div class="row">
+	<div ng-controller="userGridCtrl as ugc">
+		<div class="panel panel-default" style="max-width: 97%;">
+		
+			<div class="panel-heading">
+
+				<div class="row">
+				
+					<div class="col-sm-2" >
+					 Name :<input type="text" class="form-control" ng-model="ugmc.user.newuser.name"/>
+					</div>
+					
+					<div class="col-sm-2" >
+					 Age :<input type="number" class="form-control" ng-model="ugmc.user.newuser.age"/>
+					</div>
+					
+					<div class="col-sm-2" >
+					 Salary :<input type="number" class="form-control" ng-model="ugmc.user.newuser.salary"/>
+					</div>
+					
+						<div class="col-sm-6">
+						{{ugmc.messgage}}
+						</div>
+				
+				</div>
+				<div class="row"></div>
+				<div class="row"><div class="col-sm-12">&nbsp;</div> </div>
+				
+				<div class="row">
+					
+					<div class="col-sm-6">
+						<input type="text"
+							title=" Multiple Keyword search for Id/Name/Age/Salary etc(Space Seperated ) "
+							placeholder="  Multiple Keyword search (Space Seperated ) " class="form-control"
+							ng-model="ugc.searchText" ng-change="ugc.reloadgrid()">
+					</div>
+					<div class="col-sm-6" >
+						 <button type="button" class="btn btn-primary"
+							title="Create User" ng-click="ugc.createUser()">
+							<span class="glyphicon glyphicon-plus-sign"></span> Create User 
+						</button> 
+						 <button type="button" class="btn btn-primary"
+							title="Modify User" ng-click="ugc.modifyUser()">
+							<span class="glyphicon glyphicon-pencil"></span> Modify User 
+						</button> 
+						
+						 <button type="button" class="btn btn-primary" title="Delete User"  ng-click="ugc.deleteUser()" >
+							<span class="glyphicon glyphicon-minus-sign"></span> Delet User 
+						</button> 
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="userGrid" ui-grid="ugc.gridOptions" ui-grid-pagination
+							ui-grid-selection></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

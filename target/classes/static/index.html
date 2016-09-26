@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="app/assets/lib/angular/angular.min.js"></script>
+<script src="app/assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app/assets/lib/jquery/dist/jquery.min.js"></script>
+<script src="app/assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="app/shared/astractrl.js"> </script>
+
+<link rel="stylesheet"  href="app/assets/lib/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet"  href="app/assets/css/astrastyle.css">
+<script src="app/assets/js/astrajs.js"> </script>
+
+<!-- UI-Grid -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+	<script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css"> 
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- User Module Components  -->
+ <script src="app/shared/services/user.js"></script> 
+ <script src="app/components/user/userGrid.js"></script> 
+ <script src="app/components/user/userGridMainCtrl.js"></script>
+ <script src="app/components/user/userGridMainDir.js"></script> 
+
+<script src="app/app.route.js"></script>
+<script src="app/app.js"></script>
+
+</head>
+
+<body ng-app="astraDemo" ng-controller="astraCtrl as ac">
+
+<!-- Main Container -->
+<div class="container">
+
+
+<!-- <div ng-include="'app/components/menu/menu.html'"></div> -->
+
+<!-- Menu Bar -->
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse1" >
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+	</button>
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="app/assets/images/logo-az.png" height="26">
+      </a>
+    </div>
+    
+    <div id="navbarCollapse1" class="navbar-collapse collapse" >
+	    <ul class="nav navbar-nav">
+	        <li ng-class="ac.getClass('/home')"><a ui-sref="Home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+	        <li ng-class="ac.getClass('/user')"><a ui-sref="User"><span class="glyphicon glyphicon-user"> </span> Manage User</a></li>
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage User <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Search User</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Create User</a></li>
+	           
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Modify User</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Delete User</a></li>
+	          </ul>
+	        </li> -->
+            <li ng-class="ac.getClass('/admin')"><a ui-sref="Admin" ><span class="glyphicon glyphicon-sunglasses"> </span> Admin</a></li>
+            <li ng-class="ac.getClass('/help')"><a ui-sref="Help" ><span class="glyphicon glyphicon-hand-right"> </span> Help</a></li>
+	    </ul>
+	    
+	    <ul class="nav navbar-nav navbar-right">
+	        <li ng-class="ac.getClass('/login')">
+              <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
+            </li>
+		</ul>
+		
+		<div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
+            <form class="navbar-form navbar-right form-inline" role="form">
+              <div class="form-group">
+                <label class="sr-only" for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required />
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="Password">Password</label>
+                <input type="password" class="form-control" id="Password" placeholder="Password" required />
+              </div>
+              <button type="submit" class="btn btn-success" ui-sref="Login">Sign in</button>
+            </form>
+          </div>
+    
+    </div>    
+  </div>
+</nav> 
+
+<!-- Menu Bar End -->
+
+  			<div id="global_error" class="">
+		 		<span class="pull-right btn-primary msg-close" id="globalMsgClose" style="cursor:" title="Close"> 
+				<i class="fa fa-times"></i>
+				</span>
+				<span id="msg-content"></span>
+			</div>
+			
+			<Script> $("#global_error").hide();</Script>
+
+<!--  Ui-View-->
+<div class="panel-body">
+
+<div ui-view> </div>
+
+</div>
+
+
+</div>
+	
+
+</body>
+</html>

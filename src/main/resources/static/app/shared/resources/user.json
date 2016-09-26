@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Sam",
+    "age": 30,
+    "salary": 70000
+  },
+  {
+    "id": 2,
+    "name": "Tom",
+    "age": 40,
+    "salary": 50000
+  },
+  {
+    "id": 3,
+    "name": "Jerome",
+    "age": 45,
+    "salary": 30000
+  },
+  {
+    "id": 4,
+    "name": "Silvia",
+    "age": 50,
+    "salary": 40000
+  },
+  {
+    "id": 5,
+    "name": "Sam vinod",
+    "age": 30,
+    "salary": 70000
+  },
+  {
+    "id": 6,
+    "name": "Tommy",
+    "age": 40,
+    "salary": 80000
+  },
+  {
+    "id": 7,
+    "name": "Vijay",
+    "age": 25,
+    "salary": 33000
+  },
+  {
+    "id": 8,
+    "name": "Rajesh",
+    "age": 10,
+    "salary": 25000
+  }
+]
